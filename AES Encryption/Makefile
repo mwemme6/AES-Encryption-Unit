@@ -7,19 +7,18 @@ VHDL_FILES=$(SRC_DIR)/defs_pkg.vhd \
             $(SRC_DIR)/mix_column.vhd \
             $(SRC_DIR)/shift_rows.vhd \
             $(SRC_DIR)/sub_bytes.vhd \
-            $(SRC_DIR)/uart_rx.vhd \
             $(SRC_DIR)/aes_enc.vhd 
+            # $(SRC_DIR)/uart_rx.vhd \
             # $(SRC_DIR)/aes_enc_top.vhd \
             # $(SRC_DIR)/uart_tx.vhd
 
 TEST_DIR=testbenches
-TESTBENCHES=$(TEST_DIR)/tb_uart_rx.vhd\
-		$(TEST_DIR)/tb_key_expansion.vhd\
-		$(TEST_DIR)/tb_sub_bytes.vhd\
-		$(TEST_DIR)/tb_shift_rows.vhd\
-		$(TEST_DIR)/tb_mix_column.vhd\
-		$(TEST_DIR)/tb_add_round_key.vhd\
-		$(TEST_DIR)/tb_aes_enc.vhd\
+TESTBENCHES=$(TEST_DIR)/tb_key_expansion.vhd\
+			$(TEST_DIR)/tb_sub_bytes.vhd\
+			$(TEST_DIR)/tb_shift_rows.vhd\
+			$(TEST_DIR)/tb_mix_column.vhd\
+			$(TEST_DIR)/tb_add_round_key.vhd\
+			$(TEST_DIR)/tb_aes_enc.vhd\
 
 			
 TOP_ENTITY=tb_aes_enc
