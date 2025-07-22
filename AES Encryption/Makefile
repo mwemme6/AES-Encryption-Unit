@@ -1,6 +1,6 @@
 GHDL=ghdl
-WORKDIR=work1
-SRC_DIR=version1.1
+WORKDIR=work
+SRC_DIR=sources
 VHDL_FILES=$(SRC_DIR)/defs_pkg.vhd \
             $(SRC_DIR)/add_round_key.vhd \
             $(SRC_DIR)/key_expansion.vhd \
@@ -12,14 +12,14 @@ VHDL_FILES=$(SRC_DIR)/defs_pkg.vhd \
             # $(SRC_DIR)/aes_enc_top.vhd \
             # $(SRC_DIR)/uart_tx.vhd
 
-TEST_DIR=testbenches1
+TEST_DIR=testbenches
 TESTBENCHES=$(TEST_DIR)/tb_uart_rx.vhd\
-			$(TEST_DIR)/tb_key_expansion.vhd\
-			$(TEST_DIR)/tb_sub_bytes.vhd\
-			$(TEST_DIR)/tb_shift_rows.vhd\
-			$(TEST_DIR)/tb_mix_column.vhd\
-			$(TEST_DIR)/tb_add_round_key.vhd\
-			$(TEST_DIR)/tb_aes_enc.vhd\
+		$(TEST_DIR)/tb_key_expansion.vhd\
+		$(TEST_DIR)/tb_sub_bytes.vhd\
+		$(TEST_DIR)/tb_shift_rows.vhd\
+		$(TEST_DIR)/tb_mix_column.vhd\
+		$(TEST_DIR)/tb_add_round_key.vhd\
+		$(TEST_DIR)/tb_aes_enc.vhd\
 
 			
 TOP_ENTITY=tb_aes_enc
