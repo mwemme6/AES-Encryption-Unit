@@ -8,7 +8,10 @@ VHDL_FILES=$(SRC_DIR)/defs_pkg.vhd \
             $(SRC_DIR)/shift_rows.vhd \
             $(SRC_DIR)/sub_bytes.vhd \
             $(SRC_DIR)/aes_enc.vhd \
-            $(SRC_DIR)/aes_enc_top.vhd 
+            $(SRC_DIR)/aes_enc_top.vhd \
+			$(SRC_DIR)/uart_rx.vhd \
+			$(SRC_DIR)/uart_tx.vhd \
+			$(SRC_DIR)/aes_top_uart.vhd 
 
 TEST_DIR=testbenches
 TESTBENCHES=$(TEST_DIR)/tb_key_expansion.vhd\
@@ -18,9 +21,10 @@ TESTBENCHES=$(TEST_DIR)/tb_key_expansion.vhd\
 			$(TEST_DIR)/tb_add_round_key.vhd\
 			$(TEST_DIR)/tb_aes_enc.vhd\
 			$(TEST_DIR)/tb_aes_enc_top.vhd\
+			$(TEST_DIR)/tb_aes_top_uart.vhd\
 
 			
-TOP_ENTITY=tb_aes_enc_top
+TOP_ENTITY=tb_aes_top_uart
 
 all: clean compile elaborate run show
 
@@ -35,7 +39,7 @@ elaborate:
 
 run:
 	@echo "🚀 Running simulation..."
-	$(GHDL) -r --workdir=$(WORKDIR) $(TOP_ENTITY) --vcd=$(WORKDIR)/$(TOP_ENTITY).vcd  --stop-time=2us
+	$(GHDL) -r --workdir=$(WORKDIR) $(TOP_ENTITY) --vcd=$(WORKDIR)/$(TOP_ENTITY).vcd 
 
 show:
 	gtkwave $(WORKDIR)/$(TOP_ENTITY).vcd
