@@ -13,14 +13,14 @@ entity aes_enc is
         data_in: in std_logic_vector(127 downto 0);
         round_keys: in all_round_key_word;
         data_out: out std_logic_vector(127 downto 0);
-        done: out std_logic;
+        done: out std_logic
 
         -- Debug outputs
-        debug_add_round_key_out : out aes_matrix;
-        debug_sub_bytes_out     : out aes_matrix;
-        debug_shift_rows_out    : out aes_matrix;
-        debug_mix_column_out    : out aes_matrix;
-        debug_add_round_key_in : out aes_matrix
+        -- debug_add_round_key_out : out aes_matrix;
+        -- debug_sub_bytes_out     : out aes_matrix;
+        -- debug_shift_rows_out    : out aes_matrix;
+        -- debug_mix_column_out    : out aes_matrix;
+        -- debug_add_round_key_in : out aes_matrix
     );
 end entity;
 
@@ -104,11 +104,11 @@ architecture RTL of aes_enc is
     
 begin
     --debug
-    debug_add_round_key_out <= add_round_key_state_out;
-    debug_sub_bytes_out     <= sub_bytes_state_out;
-    debug_shift_rows_out    <= shift_rows_state_out;
-    debug_mix_column_out    <= mix_column_state_out;
-    debug_add_round_key_in <= add_round_key_in;
+    -- debug_add_round_key_out <= add_round_key_state_out;
+    -- debug_sub_bytes_out     <= sub_bytes_state_out;
+    -- debug_shift_rows_out    <= shift_rows_state_out;
+    -- debug_mix_column_out    <= mix_column_state_out;
+    -- debug_add_round_key_in <= add_round_key_in;
     
     --Component Instantiation
     add_round_key_inst: add_round_key
